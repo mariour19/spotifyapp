@@ -1,0 +1,34 @@
+
+
+<div class="container mb-5 mt-5">
+  <a [routerLink]="['/busqueda-de-artistas']"> 
+
+  <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="" class="w-25">
+</a>
+
+</div>
+<div class="container text-white mb-5 mt-5">
+
+  <h1> Selecciona tu album favorito</h1>
+
+</div>
+
+
+
+<div class="container" >
+    <div class="row">
+      <div class="col-sm" *ngFor="let item of itemsAlbum">
+
+       
+        <a [routerLink]="['/lista-de-canciones',item.id]">     <img  [src]="item.images[0].url" class="img-thumbnail animate__animated animate__zoomIn foto" alt=""> </a>
+     
+        <h3 class="text-white"> {{item.name}} </h3>
+
+  
+      </div>
+    </div>
+
+
+
+</div>
+   

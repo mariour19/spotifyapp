@@ -1,0 +1,49 @@
+<div class="container mb-5 mt-5">
+    <a [routerLink]="['/busqueda-de-artistas']"> 
+
+    <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="" class="w-25">
+</a>
+
+</div>
+  
+  
+  <div class="container text-white mb-5"> 
+    
+    
+    
+    <h1>Playlist</h1>
+  </div>
+  
+
+
+<div class="container"> 
+<table class="table table-hover table-borderless">
+
+    <thead class="text-white">
+        <tr>
+            <th>#</th>
+            <th>Título</th>
+            <th>Duración</th>
+            <th>Vista previa</th>
+            <th>    </th>
+        
+        </tr>
+
+    </thead>
+    <tbody class="text-white">
+        <tr *ngFor="let item of itemsAlbum; let i= index">
+
+            <td>{{i+1}}</td>
+           
+            <td> {{item.name}}</td>
+            <td>{{item.duration_ms}}</td>
+            <td> <audio  controls [src]="item.preview_url"></audio> </td>
+
+           
+
+        </tr>
+
+    </tbody>
+</table>
+
+</div>

@@ -1,0 +1,47 @@
+
+<div class="container mb-5 mt-5">
+  <a [routerLink]="['/busqueda-de-artistas']"> 
+
+  <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="" class="w-25">
+</a>
+
+</div>
+<div class="container text-white mb-2"> 
+  
+  
+  
+  <h1>Busca tus cantantes favoritos:</h1>
+
+
+</div>
+
+<div class="container mb-5">
+  
+
+    <app-artists-input (onEnter)="buscar($event)" placeholder="Buscar Artistas"></app-artists-input>
+
+</div>
+
+<div class="container" >
+    <div class="row">
+      <div class="col-sm" *ngFor="let item of itemsArtists">
+
+       <div class="contenedor">
+        <a [routerLink]="['/lista-de-albums',item.id]">  <img  [src]="item.images[0].url" class="img-thumbnail animate__animated animate__zoomIn w-100 foto" alt="">  </a>
+      </div>
+        <h3 class="text-white"> {{item.name}} </h3>
+
+      </div>
+    </div>
+
+    <div *ngIf="hayError" class="alert alert-danger">
+      No se encontró el artista {{termino}}
+  
+  </div>
+
+</div>
+   
+
+
+          
+ 
